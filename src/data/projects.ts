@@ -1,0 +1,123 @@
+import { Project } from '../components/ProjectCard';
+
+// Web3/Blockchain Projects
+export const web3Projects: Project[] = [
+  {
+    id: 'mallvest',
+    title: 'Mallvest',
+    description: 'Platform to revolutionize mall investments through blockchain technology',
+    longDescription: 'Mallvest is revolutionizing mall investments through blockchain technology. Our platform allows users to tokenize, trade, and manage mall properties with unprecedented transparency and efficiency. By leveraging smart contracts and decentralized technology, we make real estate investment more accessible, liquid, and transparent for investors worldwide.',
+    images: ['/assets/mallvest-1.png', '/assets/mallvest-2.png'],
+    video: '/assets/mallvest.mp4',
+    technologies: ['Solidity', 'React', 'Web3.js', 'Node.js', 'MongoDB', 'Ethereum', 'Smart Contracts'],
+    demoLink: 'https://mallvest.demo.com',
+    codeLink: 'https://github.com/fabian4819/mallvest',
+    category: 'blockchain',
+  },
+  {
+    id: 'trustbridge',
+    title: 'TrustBridge',
+    description: 'Revolutionary cross-border payments using WhatsApp and Cardano blockchain',
+    longDescription: 'TrustBridge is a revolutionary cross-border payment platform that leverages WhatsApp messages and Cardano blockchain technology. Send money to anyone, anywhere, instantly and securely. The platform features an intuitive dashboard for managing transactions and seamless WhatsApp integration that allows users to initiate payments through familiar messaging interfaces. Built on Cardano for enhanced security and lower transaction fees.',
+    images: ['/assets/trustbridge-1.png', '/assets/trustbridge-2.png'],
+    video: '/assets/trustbridge.mp4',
+    technologies: ['Cardano', 'Plutus', 'React', 'Node.js', 'WhatsApp API', 'TypeScript', 'Smart Contracts'],
+    demoLink: 'https://trustbridge.demo.com',
+    codeLink: 'https://github.com/fabian4819/trustbridge',
+    category: 'blockchain',
+  }
+];
+
+// Web2 Projects
+export const web2Projects: Project[] = [
+  {
+    id: 'warasin',
+    title: 'Warasin',
+    description: 'Mental health platform with emotional analyzer and smart features',
+    longDescription: 'Warasin is a comprehensive mental health platform website designed for emotional analysis. Features include mood analyzer for tracking emotional states, smart journal for reflective writing, facial expression recognition technology, anonymous chatbot for safe conversations, and comprehensive monitoring & reporting tools for mental health professionals.',
+    images: ['/assets/warasin-1.png', '/assets/warasin-2.png'],
+    video: '/assets/warasin-1.mp4',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'TensorFlow.js', 'Socket.io', 'Chart.js'],
+    demoLink: 'https://warasin.demo.com',
+    codeLink: 'https://github.com/fabian4819/warasin',
+    category: 'web2',
+  },
+  {
+    id: 'kkn-village-websites',
+    title: 'KKN Village Profile Websites',
+    description: 'Three village profile websites for Ngadi, Dullah, and Labetawi villages',
+    longDescription: 'Community service project (KKN - Kuliah Kerja Nyata) creating three comprehensive village profile websites for Ngadi, Dullah, and Labetawi villages in Tual City, Maluku Province, Indonesia. Features include village profile videos, community podcasts, traditional cuisine showcase, village organizational structure, interactive village maps, village articles, BMI calculator, and comprehensive village information. These websites help preserve local culture and provide digital presence for remote villages.',
+    images: ['/assets/kkn-1.png', '/assets/kkn-2.png'],
+    video: '/assets/kkn.mp4',
+    technologies: ['Next.js', 'Tailwind CSS', 'Leaflet Maps', 'Strapi CMS', 'PostgreSQL', 'Vercel'],
+    demoLink: 'https://desa-ngadi.vercel.app',
+    codeLink: 'https://github.com/fabian4819/kkn-village-websites',
+    category: 'web2',
+  },
+  {
+    id: 'borobudur-explorer',
+    title: 'Borobudur Explorer',
+    description: 'Mobile app for Borobudur temple tourism and cultural preservation',
+    longDescription: 'A mobile application created for the world wonder of Borobudur Temple. Features focus on navigation for tourists and cultural preservation with Borobudurpedia packaged as informative articles about the temple\'s history, architecture, and cultural significance.',
+    images: ['/assets/borobudur-1.jpeg', '/assets/borobudur-2.jpeg'],
+    video: '/assets/borobudur.mp4',
+    technologies: ['React Native', 'TypeScript', 'Firebase', 'Google Maps API', 'AsyncStorage'],
+    demoLink: 'https://play.google.com/store/apps/borobudur-explorer',
+    codeLink: 'https://github.com/fabian4819/borobudur-explorer',
+    category: 'mobile',
+  },
+  {
+    id: 'gastreit',
+    title: 'GASTREIT',
+    description: 'Mobile app for gastric acid quality monitoring with doctor consultation',
+    longDescription: 'A mobile application created for monitoring patients\' gastric acid quality, equipped with gastric acid visualization features and doctor-patient consultation capabilities. Helps patients track their gastric health and connect with healthcare professionals.',
+    images: ['/assets/gastreit-1.jpeg', '/assets/gastreit-2.jpeg'],
+    video: '/assets/gastreit.mp4',
+    technologies: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'Chart.js', 'Firebase'],
+    demoLink: 'https://play.google.com/store/apps/gastreit',
+    codeLink: 'https://github.com/fabian4819/gastreit',
+    category: 'mobile',
+  },
+  {
+    id: 'perdana-property',
+    title: 'Perdana Property',
+    description: 'Real estate marketing website for housing and boarding house assets',
+    longDescription: 'Perdana Property is a comprehensive real estate marketing website designed to promote housing and boarding house assets. Features include detailed property information with pricing, area specifications, high-quality images, and financing schemes. The platform also includes WhatsApp integration for direct consultation with property agents, making it easy for potential buyers to get immediate assistance and information about available properties.',
+    images: ['/assets/perdanaproperty-1.png', '/assets/perdanaproperty-2.png'],
+    video: '/assets/perdanaproperty.mp4',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'WhatsApp API', 'MongoDB', 'Vercel'],
+    demoLink: 'https://perdanaproperty.demo.com',
+    codeLink: 'https://github.com/fabian4819/perdana-property',
+    category: 'web2',
+  },
+  {
+    id: 'roetix',
+    title: 'Roetix',
+    description: 'Comprehensive ticketing platform supporting both seating and seatless events',
+    longDescription: 'Roetix is a comprehensive ticketing platform that supports both seating and seatless event configurations. The platform features multiple event management capabilities with detailed event information, interactive seat selection for seated events, integrated payment gateway, and complete payment processing within a single platform. Users can browse various events, view event details, select their preferred seats (for seated events), and complete purchases through secure payment processing.',
+    images: ['/assets/roetix-1.png', '/assets/roetix-2.png'],
+    video: '/assets/roetix.mp4',
+    technologies: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Stripe', 'Socket.io', 'Tailwind CSS'],
+    demoLink: 'https://roetix.demo.com',
+    codeLink: 'https://github.com/fabian4819/roetix',
+    category: 'saas',
+  },
+  {
+    id: 'novatix',
+    title: 'NovaTix',
+    description: 'Concert and orchestra ticketing system with seat mapping and merchandise',
+    longDescription: 'NovaTix is a specialized ticketing platform designed for concert and orchestra ticket sales. The platform allows buyers to freely select seats based on detailed seat maps, purchase merchandise, and complete full payment processing within a single integrated platform. Features include interactive seat mapping for optimal seat selection, merchandise integration for additional purchases, comprehensive payment gateway, and seamless user experience for concert and orchestra events.',
+    images: ['/assets/novatix-1.png', '/assets/novatix-2.png'],
+    video: '/assets/novatix.mp4',
+    technologies: ['Vue.js', 'Laravel', 'MySQL', 'Stripe', 'WebSocket', 'Bootstrap', 'Redis'],
+    demoLink: 'https://novatix.demo.com',
+    codeLink: 'https://github.com/fabian4819/novatix',
+    category: 'saas',
+  },
+];
+
+// All projects combined
+export const projects: Project[] = [...web3Projects, ...web2Projects];
+
+// Featured projects (first 4)
+export const featuredProjects = projects.slice(0, 4);
