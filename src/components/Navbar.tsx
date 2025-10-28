@@ -6,7 +6,7 @@ import { Button } from './ui/button';
 export function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const currentPage = location.pathname === '/' ? 'home' : 'projects';
+  const currentPage = location.pathname === '/' ? 'home' : location.pathname === '/cv' ? 'cv' : 'projects';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -33,6 +33,12 @@ export function Navbar() {
         { label: 'Skills', action: () => scrollToSection('skills') },
         { label: 'Projects', action: () => scrollToSection('projects') },
         { label: 'Contact', action: () => scrollToSection('contact') },
+      ]
+    : currentPage === 'cv'
+    ? [
+        { label: 'Home', action: () => navigate('/') },
+        { label: 'Projects', action: () => navigate('/projects') },
+        { label: 'Contact', action: () => { navigate('/'); setTimeout(() => scrollToSection('contact'), 100); } },
       ]
     : [
         { label: 'Home', action: () => navigate('/') },
@@ -72,7 +78,13 @@ export function Navbar() {
                 {link.label}
               </button>
             ))}
-            
+
+            <Link to="/cv">
+              <button className="text-slate-300 hover:text-cyan-400 transition-colors">
+                CV
+              </button>
+            </Link>
+
             {currentPage === 'home' && (
               <Link to="/projects">
                 <Button
@@ -105,6 +117,11 @@ export function Navbar() {
                 {link.label}
               </button>
             ))}
+            <Link to="/cv" onClick={() => setIsMobileMenuOpen(false)}>
+              <button className="block w-full text-left text-slate-300 hover:text-cyan-400 transition-colors py-2">
+                CV
+              </button>
+            </Link>
             {currentPage === 'home' && (
               <Link to="/projects" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button

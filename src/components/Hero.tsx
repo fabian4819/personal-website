@@ -10,6 +10,15 @@ export function Hero() {
     }
   };
 
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/assets/Habib Fabian Fahlesi - Fullstack Web Developer _ Mobile Apps Developer _ Blockchain Developer Resume.pdf';
+    link.download = 'Habib_Fabian_Fahlesi_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section 
       id="hero"
@@ -85,6 +94,7 @@ export function Hero() {
               <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </Button>
             <Button
+              onClick={downloadCV}
               variant="outline"
               className="border-2 border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 px-8 py-6 rounded-2xl text-lg backdrop-blur-sm"
             >

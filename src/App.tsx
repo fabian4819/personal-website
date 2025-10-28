@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
+import { CV } from './pages/CV';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,6 +24,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/cv" element={<CV />} />
       </Routes>
     </div>
   );
