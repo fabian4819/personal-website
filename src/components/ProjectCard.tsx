@@ -101,21 +101,17 @@ export function ProjectCard({ project, index, onClick }: ProjectCardProps) {
                 {project.category || 'Development'}
               </div>
             </div>
-
-            {/* View Details Icon */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="w-12 h-12 rounded-full bg-emerald-500 text-zinc-950 flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.5)] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <ArrowUpRight size={24} />
-              </div>
-            </div>
           </div>
         )}
 
         {/* Content Section */}
         <div className="p-8 flex-1 flex flex-col" style={{ transform: "translateZ(30px)" }}>
-          <h3 className="text-white text-2xl font-bold mb-3 tracking-tight group-hover:text-emerald-400 transition-colors">
-            {project.title}
-          </h3>
+          <div className="flex justify-between items-start mb-4">
+            <h3 className="text-white text-2xl font-bold tracking-tight group-hover:text-emerald-400 transition-colors">
+              {project.title}
+            </h3>
+            <ArrowUpRight className="text-zinc-600 group-hover:text-emerald-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" size={20} />
+          </div>
           
           <p className="text-zinc-400 mb-6 flex-1 leading-relaxed font-light text-sm">
             {project.description}

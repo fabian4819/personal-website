@@ -26,8 +26,7 @@ export function About() {
           className="flex items-center gap-4 mb-16"
         >
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-800 to-zinc-800" />
-          <h2 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
-            <User className="text-emerald-400" />
+          <h2 className="text-3xl font-bold tracking-tight text-white uppercase tracking-[0.2em]">
             About <span className="text-emerald-400">Me</span>
           </h2>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent via-zinc-800 to-zinc-800" />
@@ -41,11 +40,8 @@ export function About() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="col-span-1 md:col-span-8 md:row-span-2 p-8 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md relative overflow-hidden group min-h-[300px] md:min-h-0"
+            className="col-span-1 md:col-span-8 md:row-span-2 p-10 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md relative overflow-hidden group min-h-[300px] md:min-h-0"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity hidden sm:block">
-              <Code size={120} />
-            </div>
             <h3 className="text-2xl font-semibold text-white mb-6">Bridging Tech & Innovation</h3>
             <div className="space-y-4 text-zinc-400 text-lg font-light leading-relaxed max-w-2xl">
               <p>
@@ -83,7 +79,6 @@ export function About() {
           {/* Highlight Tiles */}
           <div className="col-span-1 md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-6">
             {highlights.map((item, index) => {
-              const Icon = item.icon;
               return (
                 <motion.div
                   key={item.label}
@@ -91,13 +86,12 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="p-6 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md hover:bg-zinc-900/60 transition-colors group"
+                  className="p-8 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md hover:bg-zinc-900/60 transition-colors group"
                 >
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                    <Icon className="w-5 h-5 text-zinc-950" />
+                  <div className={`text-[10px] font-bold tracking-[0.2em] uppercase mb-4 text-emerald-400/60 group-hover:text-emerald-400 transition-colors`}>
+                    {item.label}
                   </div>
-                  <h4 className="text-white font-medium mb-1">{item.label}</h4>
-                  <p className="text-zinc-500 text-xs leading-tight">{item.desc}</p>
+                  <p className="text-zinc-300 text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               );
             })}

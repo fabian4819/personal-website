@@ -64,8 +64,7 @@ export function Experience() {
           className="flex items-center gap-4 mb-20"
         >
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-800 to-zinc-800" />
-          <h2 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
-            <Calendar className="text-emerald-400" />
+          <h2 className="text-3xl font-bold tracking-tight text-white uppercase tracking-[0.2em]">
             Milestones <span className="text-emerald-400">&</span> History
           </h2>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent via-zinc-800 to-zinc-800" />
@@ -82,7 +81,6 @@ export function Experience() {
           {/* Timeline Items */}
           <div className="space-y-12">
             {experiences.map((exp, index) => {
-              const Icon = exp.icon;
               const isEven = index % 2 === 0;
               
               return (
@@ -103,21 +101,11 @@ export function Experience() {
 
                   {/* Content Card */}
                   <div className={`w-full md:w-[45%] ${isEven ? 'md:text-right' : 'md:text-left'}`}>
-                    <div className="group relative p-8 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md hover:border-white/10 transition-all duration-500 hover:bg-zinc-900/60">
-                      {/* Icon */}
-                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${exp.color} flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 transition-transform ${isEven ? 'md:ml-auto' : ''}`}>
-                        <Icon className="w-6 h-6 text-zinc-950" />
-                      </div>
-
-                      <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest block mb-2">{exp.period}</span>
+                    <div className="group relative p-10 rounded-[2rem] bg-zinc-900/40 border border-white/5 backdrop-blur-md hover:border-emerald-500/20 transition-all duration-500 hover:bg-zinc-900/60">
+                      <div className="text-[10px] font-bold text-emerald-400/60 group-hover:text-emerald-400 uppercase tracking-widest block mb-4 transition-colors">{exp.period}</div>
                       <h3 className="text-white text-xl font-bold mb-1 tracking-tight">{exp.title}</h3>
-                      <p className="text-zinc-500 text-sm font-medium mb-4">{exp.organization}</p>
+                      <p className="text-zinc-500 text-sm font-medium mb-6">{exp.organization}</p>
                       <p className="text-zinc-400 text-sm font-light leading-relaxed">{exp.description}</p>
-                      
-                      {/* Decoration */}
-                      <div className="absolute top-4 right-4 text-zinc-800 opacity-20 group-hover:opacity-40 transition-opacity">
-                        <Icon size={40} />
-                      </div>
                     </div>
                   </div>
 

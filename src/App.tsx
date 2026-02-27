@@ -42,13 +42,20 @@ function CustomCursor() {
       animate={{
         x: mousePos.x - 16,
         y: mousePos.y - 16,
-        scale: isHovering ? 2 : 1,
-        backgroundColor: isHovering ? 'rgba(16, 185, 129, 0.1)' : 'rgba(16, 185, 129, 0)',
-        borderColor: isHovering ? 'rgba(16, 185, 129, 1)' : 'rgba(16, 185, 129, 0.5)',
+        scale: isHovering ? 2.5 : 1,
+        backgroundColor: isHovering ? 'rgba(16, 185, 129, 0.05)' : 'rgba(16, 185, 129, 0)',
+        borderColor: isHovering ? 'rgba(16, 185, 129, 0.8)' : 'rgba(16, 185, 129, 0.3)',
+        borderWidth: isHovering ? '1px' : '2px',
       }}
-      transition={{ type: 'spring', damping: 20, stiffness: 250, mass: 0.5 }}
+      transition={{ type: 'spring', damping: 25, stiffness: 300, mass: 0.4 }}
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-emerald-500 rounded-full" />
+      <motion.div 
+        animate={{
+          scale: isHovering ? 0 : 1,
+          opacity: isHovering ? 0 : 1
+        }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-emerald-500 rounded-full" 
+      />
     </motion.div>
   );
 }

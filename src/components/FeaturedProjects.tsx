@@ -16,22 +16,25 @@ export function FeaturedProjects() {
     setIsModalOpen(true);
   };
   return (
-    <section id="projects" className="relative py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="relative py-32 bg-zinc-950 overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="flex items-center gap-4 mb-16"
         >
-          <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500 text-4xl sm:text-5xl mb-4">
-            Featured Projects
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-800 to-zinc-800" />
+          <h2 className="text-3xl font-bold tracking-tight text-white uppercase tracking-[0.2em]">
+            Featured <span className="text-emerald-400">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 mx-auto rounded-full mb-6" />
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Showcasing my best work across Web3, SaaS, and IoT ecosystems
-          </p>
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-zinc-800 to-zinc-800" />
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
@@ -50,15 +53,15 @@ export function FeaturedProjects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="text-center"
+          className="flex justify-center mt-12"
         >
           <Link to="/projects">
-            <Button
-              className="bg-gradient-to-r from-cyan-500 to-violet-600 hover:from-cyan-600 hover:to-violet-700 text-white px-8 py-6 rounded-2xl text-lg group"
+            <button
+              className="px-8 py-4 rounded-2xl bg-zinc-900 border border-white/5 text-white font-bold uppercase tracking-widest text-sm hover:bg-emerald-500/10 hover:border-emerald-500/20 transition-all duration-300 flex items-center gap-3 group"
             >
               View All Projects
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
           </Link>
         </motion.div>
       </div>
