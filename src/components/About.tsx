@@ -1,15 +1,7 @@
 import { motion } from 'motion/react';
-import { Code, Zap, Rocket, Shield, ExternalLink, User } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function About() {
-  const highlights = [
-    { icon: Code, label: 'Clean Code', color: 'from-emerald-400 to-teal-500', desc: 'Maintainable, scalable patterns' },
-    { icon: Zap, label: 'Performance', color: 'from-blue-400 to-indigo-500', desc: 'Optimized for speed & efficiency' },
-    { icon: Rocket, label: 'Innovation', color: 'from-violet-400 to-purple-500', desc: 'Bleeding edge tech adoption' },
-    { icon: Shield, label: 'Security', color: 'from-rose-400 to-red-500', desc: 'Secure smart contracts & apps' },
-  ];
-
   return (
     <section id="about" className="relative py-32 bg-zinc-950 overflow-hidden">
       {/* Background Decor */}
@@ -75,27 +67,6 @@ export function About() {
               <p className="text-zinc-400 text-sm">Fullstack & Blockchain</p>
             </div>
           </motion.div>
-
-          {/* Highlight Tiles */}
-          <div className="col-span-1 md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {highlights.map((item, index) => {
-              return (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="p-8 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md hover:bg-zinc-900/60 transition-colors group"
-                >
-                  <div className={`text-[10px] font-bold tracking-[0.2em] uppercase mb-4 text-emerald-400/60 group-hover:text-emerald-400 transition-colors`}>
-                    {item.label}
-                  </div>
-                  <p className="text-zinc-300 text-sm leading-relaxed">{item.desc}</p>
-                </motion.div>
-              );
-            })}
-          </div>
         </div>
       </div>
     </section>

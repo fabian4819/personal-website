@@ -63,8 +63,12 @@ export function Navbar() {
           to="/"
           className="flex items-center gap-2 group cursor-pointer"
         >
-          <div className="p-1.5 rounded-lg bg-gradient-to-br from-emerald-400 to-indigo-500 group-hover:rotate-12 transition-transform">
-            <Code2 className="w-5 h-5 text-zinc-950" />
+          <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden group-hover:border-emerald-500/50 transition-colors bg-zinc-900 flex items-center justify-center">
+            <img 
+              src="/avatar.jpg" 
+              alt="Fabian" 
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
           </div>
           <span className="text-white font-medium tracking-tight hidden sm:block">FABIAN</span>
         </Link>
