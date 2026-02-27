@@ -1,89 +1,88 @@
 import { motion } from 'motion/react';
-import { Code, Database, Blocks, Wrench } from 'lucide-react';
+import { Code, Database, Blocks, Wrench, Layers } from 'lucide-react';
 
 export function Skills() {
   const skillCategories = [
     {
       title: 'Frontend',
       icon: Code,
-      color: 'from-cyan-500 to-blue-600',
+      color: 'from-emerald-400 to-teal-500',
       skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Flutter', 'Kotlin'],
     },
     {
       title: 'Backend',
       icon: Database,
-      color: 'from-violet-500 to-purple-600',
+      color: 'from-blue-400 to-indigo-500',
       skills: ['Laravel', 'Node.js', 'Express', 'REST APIs', 'Golang'],
     },
     {
       title: 'Blockchain',
       icon: Blocks,
-      color: 'from-pink-500 to-rose-600',
+      color: 'from-violet-400 to-purple-500',
       skills: ['Solidity', 'Foundry', 'Web3.js', 'Ethers.js', 'Smart Contracts'],
     },
     {
-      title: 'Database & Tools',
+      title: 'DevOps & Tools',
       icon: Wrench,
-      color: 'from-emerald-500 to-teal-600',
+      color: 'from-rose-400 to-red-500',
       skills: ['MySQL', 'MongoDB', 'Firebase', 'Docker', 'Git', 'CI/CD'],
     },
   ];
 
   return (
-    <section id="skills" className="relative py-20 bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="relative py-32 bg-zinc-950 overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_400px,#3b82f610,transparent)]" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="flex items-center gap-4 mb-20"
         >
-          <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500 text-4xl sm:text-5xl mb-4">
-            Skills & Tech Stack
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-800 to-zinc-800" />
+          <h2 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
+            <Layers className="text-indigo-400" />
+            Stack <span className="text-indigo-400">Expertise</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 mx-auto rounded-full" />
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-zinc-800 to-zinc-800" />
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             return (
               <motion.div
                 key={category.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative"
+                className="group relative h-full"
               >
-                {/* Glow Effect */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-20 rounded-3xl blur-xl transition-opacity duration-500`} />
+                {/* Subtle Hover Glow */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-10 rounded-3xl blur-2xl transition-all duration-500`} />
                 
-                {/* Card */}
-                <div className="relative p-6 rounded-3xl bg-slate-900/50 border border-slate-800/50 backdrop-blur-sm hover:border-slate-700 transition-all duration-300 h-full">
-                  {/* Icon */}
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className={`p-3 rounded-2xl bg-gradient-to-br ${category.color}`}>
-                      <Icon className="w-6 h-6 text-white" />
+                <div className="relative p-8 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md h-full flex flex-col hover:border-white/10 transition-colors">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform`}>
+                      <Icon className="w-6 h-6 text-zinc-950" />
                     </div>
-                    <h3 className="text-white text-xl">{category.title}</h3>
+                    <h3 className="text-xl font-semibold text-white">{category.title}</h3>
                   </div>
 
-                  {/* Skills */}
-                  <div className="space-y-2">
+                  <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, skillIndex) => (
-                      <motion.div
+                      <motion.span
                         key={skill}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
                         transition={{ delay: index * 0.1 + skillIndex * 0.05 }}
-                        className="flex items-center gap-2"
+                        className="px-3 py-1.5 rounded-xl bg-zinc-950/50 border border-white/5 text-zinc-400 text-sm font-light hover:text-white hover:border-emerald-500/30 transition-colors cursor-default"
                       >
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${category.color}`} />
-                        <span className="text-slate-400 text-sm">{skill}</span>
-                      </motion.div>
+                        {skill}
+                      </motion.span>
                     ))}
                   </div>
                 </div>

@@ -1,92 +1,107 @@
 import { motion } from 'motion/react';
-import { Code, Zap, Rocket, Shield } from 'lucide-react';
+import { Code, Zap, Rocket, Shield, ExternalLink, User } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function About() {
   const highlights = [
-    { icon: Code, label: 'Clean Code', color: 'from-cyan-500 to-blue-500' },
-    { icon: Zap, label: 'Performance', color: 'from-violet-500 to-purple-500' },
-    { icon: Rocket, label: 'Innovation', color: 'from-pink-500 to-rose-500' },
-    { icon: Shield, label: 'Security', color: 'from-emerald-500 to-teal-500' },
+    { icon: Code, label: 'Clean Code', color: 'from-emerald-400 to-teal-500', desc: 'Maintainable, scalable patterns' },
+    { icon: Zap, label: 'Performance', color: 'from-blue-400 to-indigo-500', desc: 'Optimized for speed & efficiency' },
+    { icon: Rocket, label: 'Innovation', color: 'from-violet-400 to-purple-500', desc: 'Bleeding edge tech adoption' },
+    { icon: Shield, label: 'Security', color: 'from-rose-400 to-red-500', desc: 'Secure smart contracts & apps' },
   ];
 
   return (
-    <section id="about" className="relative py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative py-32 bg-zinc-950 overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="flex items-center gap-4 mb-16"
         >
-          <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500 text-4xl sm:text-5xl mb-4">
-            About Me
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-800 to-zinc-800" />
+          <h2 className="text-3xl font-bold tracking-tight text-white flex items-center gap-3">
+            <User className="text-emerald-400" />
+            About <span className="text-emerald-400">Me</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 mx-auto rounded-full" />
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-zinc-800 to-zinc-800" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Image */}
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[auto] md:auto-rows-[180px]">
+          
+          {/* Bio Card - Large */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+            className="col-span-1 md:col-span-8 md:row-span-2 p-8 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md relative overflow-hidden group min-h-[300px] md:min-h-0"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-violet-600/20 rounded-3xl blur-2xl" />
-            <div className="relative rounded-3xl overflow-hidden border border-slate-800/50 backdrop-blur-sm bg-slate-800/30 max-h-[500px]">
-              <ImageWithFallback
-                src="/my-photo.jpeg"
-                alt="Habib Fabian Fahlesi"
-                className="w-full h-full object-cover object-top"
-              />
+            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity hidden sm:block">
+              <Code size={120} />
+            </div>
+            <h3 className="text-2xl font-semibold text-white mb-6">Bridging Tech & Innovation</h3>
+            <div className="space-y-4 text-zinc-400 text-lg font-light leading-relaxed max-w-2xl">
+              <p>
+                I'm <span className="text-emerald-400 font-medium">Habib Fabian Fahlesi</span>, a developer who thrives at the intersection of complex problem-solving and clean architecture.
+              </p>
+              <p>
+                From building scalable <span className="text-white font-normal">SaaS ecosystems</span> with React & Laravel to architecting <span className="text-white font-normal">Decentralized protocols</span> on Ethereum, my goal is to create software that isn't just functional, but exceptional.
+              </p>
+              <p className="hidden sm:block">
+                Currently focusing on the evolution of Web3 and AI-driven automation.
+              </p>
             </div>
           </motion.div>
 
-          {/* Content */}
+          {/* Image Card */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
+            transition={{ delay: 0.1 }}
+            className="col-span-1 md:col-span-4 md:row-span-2 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md overflow-hidden relative group aspect-[4/3] md:aspect-auto"
           >
-            <div className="space-y-4">
-              <p className="text-slate-300 text-lg leading-relaxed">
-                Hi! I'm Habib Fabian Fahlesi, a passionate Fullstack and Blockchain Developer dedicated to building innovative solutions that bridge traditional web technologies with the decentralized future.
-              </p>
-              <p className="text-slate-400 leading-relaxed">
-                With expertise spanning React, Laravel, and Solidity, I specialize in creating scalable web applications and smart contracts. My journey in tech has led me to work on diverse projects from SaaS platforms to Web3 music investment ecosystems.
-              </p>
-              <p className="text-slate-400 leading-relaxed">
-                I'm driven by the challenge of solving complex problems and turning ideas into reality through clean, efficient code. Whether it's building IoT-based energy management systems or NFT marketplaces, I bring a holistic approach to every project.
-              </p>
-            </div>
-
-            {/* Highlights */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {highlights.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-center gap-3 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm hover:scale-105 transition-transform"
-                  >
-                    <div className={`p-2 rounded-xl bg-gradient-to-br ${item.color}`}>
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-slate-300">{item.label}</span>
-                  </motion.div>
-                );
-              })}
+            <ImageWithFallback
+              src="/my-photo.jpeg"
+              alt="Habib Fabian Fahlesi"
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
+            <div className="absolute bottom-6 left-6">
+              <p className="text-white font-medium">Yogyakarta, ID</p>
+              <p className="text-zinc-400 text-sm">Fullstack & Blockchain</p>
             </div>
           </motion.div>
+
+          {/* Highlight Tiles */}
+          <div className="col-span-1 md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {highlights.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="p-6 rounded-3xl bg-zinc-900/40 border border-white/5 backdrop-blur-md hover:bg-zinc-900/60 transition-colors group"
+                >
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-5 h-5 text-zinc-950" />
+                  </div>
+                  <h4 className="text-white font-medium mb-1">{item.label}</h4>
+                  <p className="text-zinc-500 text-xs leading-tight">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
