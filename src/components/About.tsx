@@ -37,7 +37,7 @@ export function About() {
             <h3 className="text-2xl font-semibold text-white mb-6">Bridging Tech & Innovation</h3>
             <div className="space-y-4 text-zinc-400 text-lg font-light leading-relaxed max-w-2xl">
               <p>
-                I'm <span className="text-emerald-400 font-medium">Habib Fabian Fahlesi</span>, a developer who thrives at the intersection of complex problem-solving and clean architecture.
+                I'm <span className="text-emerald-400 font-medium">Fabian</span>, a developer who thrives at the intersection of complex problem-solving and clean architecture.
               </p>
               <p>
                 From building scalable <span className="text-white font-normal">SaaS ecosystems</span> with React & Laravel to architecting <span className="text-white font-normal">Decentralized protocols</span> on Ethereum, my goal is to create software that isn't just functional, but exceptional.
@@ -58,7 +58,7 @@ export function About() {
           >
             <ImageWithFallback
               src="/my-photo.jpeg"
-              alt="Habib Fabian Fahlesi"
+              alt="Fabian"
               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60" />

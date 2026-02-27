@@ -8,7 +8,7 @@ export function CV() {
   const downloadCV = () => {
     const link = document.createElement('a');
     link.href = '/assets/Habib Fabian Fahlesi - Fullstack Web Developer _ Mobile Apps Developer _ Blockchain Developer Resume.pdf';
-    link.download = 'Habib_Fabian_Fahlesi_Resume.pdf';
+    link.download = 'Fabian_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -76,7 +76,7 @@ export function CV() {
               <iframe
                 src="/assets/Habib Fabian Fahlesi - Fullstack Web Developer _ Mobile Apps Developer _ Blockchain Developer Resume.pdf"
                 className="absolute inset-0 w-full h-full rounded-2xl border border-slate-700/50"
-                title="Habib Fabian Fahlesi Resume"
+                title="Fabian Resume"
               />
             </div>
           </motion.div>

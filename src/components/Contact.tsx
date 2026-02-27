@@ -1,21 +1,22 @@
 import { motion } from 'motion/react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
-import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useState } from 'react';
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+  const sendWhatsApp = () => {
+    if (!message.trim()) return;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/6282232018289?text=${encodedMessage}`, '_blank');
+  };
+
+  const sendEmail = () => {
+    if (!message.trim()) return;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=bianfahlesi50@gmail.com&body=${encodedMessage}`, '_blank');
   };
 
   const contactInfo = [
@@ -25,6 +26,7 @@ export function Contact() {
       value: 'bianfahlesi50@gmail.com',
       color: 'from-emerald-500/20 to-emerald-500/0',
       textColor: 'text-emerald-400',
+      href: 'https://mail.google.com/mail/?view=cm&fs=1&to=bianfahlesi50@gmail.com'
     },
     {
       icon: Phone,
@@ -32,6 +34,7 @@ export function Contact() {
       value: '+6282232018289',
       color: 'from-indigo-500/20 to-indigo-500/0',
       textColor: 'text-indigo-400',
+      href: 'https://wa.me/6282232018289'
     },
     {
       icon: MapPin,
@@ -39,6 +42,7 @@ export function Contact() {
       value: 'Yogyakarta, Indonesia',
       color: 'from-emerald-500/20 to-indigo-500/20',
       textColor: 'text-white',
+      href: 'https://maps.google.com/?q=Yogyakarta,Indonesia'
     },
   ];
 
@@ -72,7 +76,7 @@ export function Contact() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Contact Form */}
+          {/* Simplified Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,52 +84,42 @@ export function Contact() {
             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           >
             <div className="relative p-1 rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent">
-              <form onSubmit={handleSubmit} className="relative p-10 rounded-[2.4rem] bg-zinc-900/80 backdrop-blur-3xl space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-zinc-500 uppercase tracking-widest ml-1">Name</label>
-                    <Input
-                      type="text"
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="h-14 bg-white/5 border-white/5 text-white placeholder:text-zinc-600 rounded-2xl focus:border-emerald-500/50 focus:ring-emerald-500/20 transition-all px-6"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-zinc-500 uppercase tracking-widest ml-1">Email</label>
-                    <Input
-                      type="email"
-                      placeholder="john@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-14 bg-white/5 border-white/5 text-white placeholder:text-zinc-600 rounded-2xl focus:border-emerald-500/50 focus:ring-emerald-500/20 transition-all px-6"
-                    />
-                  </div>
-                </div>
-
+              <div className="relative p-10 rounded-[2.4rem] bg-zinc-900/80 backdrop-blur-3xl space-y-8">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-zinc-500 uppercase tracking-widest ml-1">Message</label>
                   <Textarea
                     placeholder="Tell me about your project..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={5}
-                    className="bg-white/5 border-white/5 text-white placeholder:text-zinc-600 rounded-2xl focus:border-emerald-500/50 focus:ring-emerald-500/20 transition-all p-6 resize-none"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    rows={6}
+                    className="bg-white/5 border-white/5 text-white placeholder:text-zinc-600 rounded-2xl focus:border-emerald-500/50 focus:ring-emerald-500/20 transition-all p-6 resize-none text-lg"
                   />
                 </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold py-8 rounded-2xl text-lg transition-all active:scale-[0.98] group relative overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center justify-center">
-                    Send Message
-                    <Send className="ml-3 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Button>
-              </form>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <Button
+                    onClick={sendWhatsApp}
+                    className="bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold py-8 rounded-2xl text-base transition-all active:scale-[0.98] group relative overflow-hidden"
+                  >
+                    <span className="relative z-10 flex items-center justify-center">
+                      Send WhatsApp
+                      <MessageCircle className="ml-3 w-5 h-5 group-hover:scale-110 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-300 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Button>
+
+                  <Button
+                    onClick={sendEmail}
+                    className="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-8 rounded-2xl text-base transition-all active:scale-[0.98] group relative overflow-hidden border border-white/5"
+                  >
+                    <span className="relative z-10 flex items-center justify-center">
+                      Send Email
+                      <Send className="ml-3 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Button>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -149,7 +143,14 @@ export function Contact() {
                     </div>
                     <div>
                       <p className="text-zinc-500 text-xs font-bold uppercase tracking-[0.2em] mb-1">{info.label}</p>
-                      <p className="text-white text-xl font-medium tracking-tight">{info.value}</p>
+                      <a 
+                        href={info.href} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white text-xl font-medium tracking-tight hover:text-emerald-400 transition-colors"
+                      >
+                        {info.value}
+                      </a>
                     </div>
                   </div>
                 </motion.div>

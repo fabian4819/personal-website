@@ -13,7 +13,7 @@ export function Hero() {
   const downloadCV = () => {
     const link = document.createElement('a');
     link.href = '/assets/Habib Fabian Fahlesi - Fullstack Web Developer _ Mobile Apps Developer _ Blockchain Developer Resume.pdf';
-    link.download = 'Habib_Fabian_Fahlesi_Resume.pdf';
+    link.download = 'Fabian_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -62,9 +62,8 @@ export function Hero() {
               transition={{ delay: 0.3 }}
               className="text-white text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight"
             >
-              Habib Fabian <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-500">
-                Fahlesi
+                Fabian
               </span>
             </motion.h1>
 

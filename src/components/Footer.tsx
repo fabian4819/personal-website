@@ -10,6 +10,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="grid md:grid-cols-4 gap-12 mb-20">
           {/* Brand */}
+          {/* Social */}
           <div className="md:col-span-2">
             <h3 className="text-white text-2xl font-bold tracking-tight mb-6 uppercase tracking-widest">
               FABIAN
@@ -19,7 +20,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/fabian4819"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-zinc-900 border border-white/5 flex items-center justify-center text-zinc-500 hover:text-emerald-400 hover:border-emerald-500/20 transition-all"
@@ -27,7 +28,7 @@ export function Footer() {
                 <Github className="w-4 h-4" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/habibfabianfahlesi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-zinc-900 border border-white/5 flex items-center justify-center text-zinc-500 hover:text-emerald-400 hover:border-emerald-500/20 transition-all"
@@ -35,7 +36,7 @@ export function Footer() {
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/f4hlesi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-zinc-900 border border-white/5 flex items-center justify-center text-zinc-500 hover:text-emerald-400 hover:border-emerald-500/20 transition-all"
@@ -71,8 +72,21 @@ export function Footer() {
             <h4 className="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.2em] mb-8">Contact</h4>
             <div className="space-y-4">
               <p className="text-zinc-400 text-xs font-medium uppercase tracking-widest">Yogyakarta, ID</p>
-              <a href="mailto:hello@fabian.com" className="block text-zinc-400 hover:text-emerald-400 transition-colors text-xs font-medium uppercase tracking-widest">
-                hello@fabian.com
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=bianfahlesi50@gmail.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block text-zinc-400 hover:text-emerald-400 transition-colors text-xs font-medium uppercase tracking-widest"
+              >
+                bianfahlesi50@gmail.com
+              </a>
+              <a 
+                href="https://wa.me/6282232018289" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block text-zinc-400 hover:text-emerald-400 transition-colors text-xs font-medium uppercase tracking-widest"
+              >
+                +62 822 3201 8289
               </a>
             </div>
           </div>
@@ -81,7 +95,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-6">
           <p className="text-zinc-600 text-[10px] font-bold uppercase tracking-[0.2em]">
-            © 2025 HABIB FABIAN FAHLESI. ALL RIGHTS RESERVED.
+            © 2025 FABIAN. ALL RIGHTS RESERVED.
           </p>
           
           <button
