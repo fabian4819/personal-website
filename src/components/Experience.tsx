@@ -5,6 +5,14 @@ import { useRef } from 'react';
 export function Experience() {
   const experiences = [
     {
+      title: 'Winner of Base Batches Global Hackathon',
+      organization: 'Base (Coinbase Layer 2)',
+      period: '2025',
+      description: 'Secured winner in the global hackathon by building Nuvia, an AI-powered DeFi strategy platform that optimizes yield across multiple protocols.',
+      icon: Trophy,
+      color: 'from-emerald-400 to-teal-500'
+    },
+    {
       title: 'Blockchain Developer',
       organization: 'Individual',
       period: '2025 - Present',
