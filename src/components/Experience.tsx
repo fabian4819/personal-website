@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Calendar, Award, Trophy, Briefcase } from 'lucide-react';
+import { Award, Trophy, Briefcase } from 'lucide-react';
 import { useRef } from 'react';
 
 export function Experience() {
@@ -11,6 +11,14 @@ export function Experience() {
       description: 'Secured winner in the global hackathon by building Nuvia, an AI-powered DeFi strategy platform that optimizes yield across multiple protocols.',
       icon: Trophy,
       color: 'from-emerald-400 to-teal-500'
+    },
+    {
+      title: 'Founding Engineer',
+      organization: 'Roetix',
+      period: '2025',
+      description: 'Architected and built a comprehensive SaaS Ticketing Platform for events, competitions, and more. Engineered scalable infrastructure for high-traffic ticket sales.',
+      icon: Briefcase,
+      color: 'from-indigo-500 to-purple-600'
     },
     {
       title: 'Blockchain Developer',
@@ -31,7 +39,7 @@ export function Experience() {
     {
       title: 'Fullstack Developer Freelance',
       organization: 'ArachnoVa',
-      period: '2024 - Present',
+      period: '2024',
       description: 'Built scalable SaaS applications using React and Laravel. Led development of real-time booking system serving 10k+ users.',
       icon: Briefcase,
       color: 'from-indigo-400 to-violet-500'
