@@ -155,26 +155,6 @@ export function Contact() {
                 </motion.div>
               );
             })}
-
-            {/* Availability Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="p-10 rounded-[2.5rem] bg-gradient-to-br from-indigo-500/10 to-emerald-500/10 border border-white/5 backdrop-blur-md relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 p-4">
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
-              </div>
-              <h3 className="text-white text-2xl font-bold mb-4">Current Status</h3>
-              <p className="text-zinc-400 leading-relaxed mb-6">
-                I'm currently available for freelance projects and full-time opportunities. If you have a vision, let's bring it to life.
-              </p>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-emerald-400 text-sm font-medium">
-                Available for hire
-              </div>
-            </motion.div>
           </div>
         </div>
       </div>
